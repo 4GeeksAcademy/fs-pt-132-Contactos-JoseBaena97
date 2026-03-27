@@ -1,32 +1,41 @@
-export const initialStore=()=>{
-  return{
+import { func } from "prop-types"
+
+export const initialStore = () => {
+  return {
     message: null,
-    todos: [
-      {
-        id: 1,
-        title: "Make the bed",
-        background: null,
-      },
-      {
-        id: 2,
-        title: "Do my homework",
-        background: null,
-      }
-    ]
+    agendas: [],
+    contacts: [],
+    todos:[],
   }
 }
 
-export default function storeReducer(store, action = {}) {
-  switch(action.type){
-    case 'add_task':
-
-      const { id,  color } = action.payload
-
+export default function storeReducer(store, action = {}){
+  switch (action.type) {
+    case 'setAgendas':
       return {
         ...store,
-        todos: store.todos.map((todo) => (todo.id === id ? { ...todo, background: color } : todo))
+        agendas: action.payload
       };
-    default:
-      throw Error('Unknown action.');
-  }    
+
+    case 'selectAgenda':
+      return {
+        ...store,
+        currentAgenda: action.payload
+      };
+
+    case 'setContact':
+      return {
+        ...store,
+        contacts: action.payload
+      };
+
+      case 'deleteContact':
+        return {
+          ...store,
+          contacts: store.contacts.filter(contact => contact.id !== action.payload)
+        };
+
+      default:
+        return store;
+  }
 }
