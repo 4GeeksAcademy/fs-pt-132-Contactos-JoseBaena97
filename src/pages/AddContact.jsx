@@ -42,7 +42,7 @@ export const AddContact = () => {
 
   return (
     <div className="container mt-5">
-      <div className="card shadow-lg border-0 px-4 py-5 mx-auto" style={{ maxWidth: "600px" }}>
+      <div className="card shadow-lg border-0 px-4 py-5 mx-auto contact-form-card">
         <h1 className="text-center fw-bold mb-4">{store.currentContact ? "Actualizar Contacto" : "Crear Contacto"}</h1>
         <form onSubmit={handleSubmit}>
           <div className="mb-4">

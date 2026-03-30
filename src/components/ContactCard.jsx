@@ -16,13 +16,12 @@ export const ContactCard = ({ contact, onDelete }) => {
         <div className="col-md-2 text-center">
           <img
             src={`https://ui-avatars.com/api/?name=${contact.name}&background=random&size=100`}
-            className="rounded-circle img-fluid"
+            className="rounded-circle img-fluid contact-avatar"
             alt={contact.name}
-            style={{ width: "100px", height: "100px", objectFit: "cover" }}
           />
         </div>
         <div className="col-md-7">
-          <div className="card-body">
+          <div className="card-body d-flex align-items-start flex-column">
             <h5 className="card-title fw-bold mb-1">{contact.name}</h5>
             <p className="card-text mb-1 text-muted">
               <i className="fa-solid fa-location-dot me-2"></i>

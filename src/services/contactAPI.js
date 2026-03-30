@@ -1,5 +1,5 @@
 const BASE_URL = "https://playground.4geeks.com/contact";
-const AGENDA_SLUG = "josebaena97";
+const AGENDA_SLUG = "JoseBaena";
 
 export const getContacts = async (dispatch) => {
   try {
